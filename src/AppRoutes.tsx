@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom"
+import Layout1 from "./layouts/layout1";
 import Layout from "./layouts/layout";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage1";
 import AuthCallbackPage from "./pages/AuthCallbackPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import ProtectedRoute from "./auth/ProtectedRoute";
@@ -8,11 +9,12 @@ import ManageRestaurantPage from "./pages/ManageRestaurantPage";
 import SearchPage from "./pages/SearchPage";
 import DetailPage from "./pages/DetailPage";
 import OrderStatusPage from "./pages/OrderStatusPage";
+import Benefits from "./components/Benefits";
 
 const AppRoutes = () => {
     return (
         <Routes>
-            <Route path="/" element={<Layout showHero><HomePage /></Layout>} />
+            <Route path="/" element={<Layout1 showHero><Benefits /></Layout1>} />
             <Route path="/auth-callback" element={<AuthCallbackPage />} />
             <Route path="/search/:city" element={<Layout showHero={false}><SearchPage /></Layout>}/>
             <Route path="/detail/:restaurantId" element={<Layout showHero={false}><DetailPage /></Layout>}/>

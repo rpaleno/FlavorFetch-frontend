@@ -6,7 +6,16 @@ import { Link } from "react-router-dom";
 const MainNav = () => {
     const { loginWithRedirect, isAuthenticated } = useAuth0();
 
+    const handleSignUp = async () => {
+        await loginWithRedirect({
+            authorizationParams: {
+                screen_hint: "signup", // This hints that the user should see the signup page
+            },
+        });
+    };
+
     return (
+        <>
         <span className="flex space-x-2 items-center">
             {isAuthenticated ? (
                 <>
@@ -16,15 +25,27 @@ const MainNav = () => {
                     <UsernameMenu /> 
                 </> 
             ) : (
-            <Button 
-                variant="ghost" 
-                className="font-bold hover:text-orange-500 hover:bg-white"
-                onClick={async () => await loginWithRedirect()}
-            >
-            Log In
-            </Button> 
+            <>
+                <Button 
+                    variant="ghost" 
+                    className="font-bold text-black rounded-3xl bg-white"
+                    onClick={async () => await loginWithRedirect()}
+                >
+                    Log In
+                </Button> 
+
+                <Button 
+                    variant="default" 
+                    className="font-bold text-white rounded-3xl bg-black"
+                    onClick={handleSignUp}
+                >
+                    Sign Up
+                </Button> 
+            
+            </>
         )}
         </span>
+        </>
     )
 }
 

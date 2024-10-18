@@ -1,22 +1,23 @@
 import { Link } from "react-router-dom";
 import MobileNav from "./MobileNav";
-import MainNav from "./MainNav";
+import MainNavLogin from "./MainNav";
 
 const Header = () => {
     return (
-        <div className="border-b-2 border-b-orange-500 py-6">
-            <div className="container mx-auto flex justify-between items-center">
+        <div className="px-4 py-6">
+            <div className="mx-auto flex justify-between items-center px-4">
                 <Link 
                     to="/"
-                    className="text-3xl font-bold tracking-tight text-orange-500"
+                    className="text-3xl font-bold tracking-tight" style={{ color: 'var(--custom-color)'}}
                 >
                     FlavorFetch
                 </Link>
                 <div className="md:hidden">
                     <MobileNav />
                 </div>
-                <div className="hidden md:block">
-                    <MainNav />
+            
+                <div className="hidden md:block px-4">
+                    <MainNavLogin />
                 </div>
             </div>
         </div>
