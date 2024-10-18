@@ -1,8 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-import landingImage from "../assets/lp3.jpeg"
-import appDownloadImage from "../assets/appDownload.png"
-import SearchBar, { SearchForm } from "@/components/SearchBar";
-
 const HomePage = () => {
     return (
         <div className="flex flex-col gap-12 py-20">
